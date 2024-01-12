@@ -1,0 +1,23 @@
+import React, { useState } from 'react'
+import DosenFormInput from '../components/DosenFormInput'
+import DosenFormFile from '../components/DosenFormFile';
+
+const AddDosen = () => {
+    const [mataKuliah, setMataKuliah] = useState([]);
+    const handleMataKuliahSubmit = (mataKuliahData) => {
+        setMataKuliah([...mataKuliah, mataKuliahData]);
+    };
+
+    const handleFileUpload = (file) => {
+        console.log("File uploaded:", file);
+    };
+
+  return (
+    <div className="flex flex-col">
+        <DosenFormInput onMataKuliahSubmit={handleMataKuliahSubmit} />
+        <DosenFormFile onFileUpload={handleFileUpload} />
+  </div>
+  )
+}
+
+export default AddDosen
