@@ -1,5 +1,4 @@
 
-import Homepage from './pages/Homepage'
 import Dashboard from './pages/Layout'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import ViewMatakuliah from './pages/ViewMatakuliah'
@@ -8,6 +7,10 @@ import AddMahasiswa from './pages/AddMahasiswa'
 import ViewMahasiswa from './pages/ViewMahasiswa'
 import AddDosen from './pages/AddDosen'
 import ViewDosen from './pages/ViewDosen'
+import AddJadwal from './pages/AddJadwal'
+import ViewJadwal from './pages/ViewJadwal'
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
 
 const router = createBrowserRouter([
   {
@@ -41,8 +44,24 @@ const router = createBrowserRouter([
       {
         path: '/dosen/view',
         element: <ViewDosen />
+      },
+      {
+        path: '/jadwal/add',
+        element: <AddJadwal />
+      },
+      {
+        path: '/jadwal/view',
+        element: <ViewJadwal />
       }
     ]
+  },
+  {
+    path: '/register',
+    element: <RegisterPage />,
+  },
+  {
+    path: '/login',
+    element: <LoginPage />,
   }
 ])
 function App() {

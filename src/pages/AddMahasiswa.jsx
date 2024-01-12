@@ -13,7 +13,7 @@ const AddMahasiswa = () => {
     console.log('File uploaded:', file);
   };
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col overflow-auto custom-scrollbar h-full">
       <MahasiswaFormInput onMahasiswaSubmit={handleMahasiswaSubmit} />
       <MahasiswaFormFile onFileUpload={handleFileUpload} />
     </div>

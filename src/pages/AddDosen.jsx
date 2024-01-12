@@ -13,7 +13,7 @@ const AddDosen = () => {
     };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col custom-scrollbar overflow-auto h-full">
         <DosenFormInput onMataKuliahSubmit={handleMataKuliahSubmit} />
         <DosenFormFile onFileUpload={handleFileUpload} />
   </div>

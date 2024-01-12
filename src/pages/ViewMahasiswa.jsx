@@ -50,8 +50,8 @@ const ViewMahasiswa = () => {
   }, []);
 
   return (
-    <div className="flex flex-col  ">
-    <div className="bg-[#fff] rounded-lg h-screen px-4  max-w-7xl">
+    <div className="flex flex-col h-full overflow-auto custom-scrollbar">
+    <div className="bg-[#fff] rounded-lg h-screen px-4 max-w-7xl">
         <h2 className="text-xl font-semibold text-gray-800 md:text-center mb-6">
           Data Mahasiswa
         </h2>

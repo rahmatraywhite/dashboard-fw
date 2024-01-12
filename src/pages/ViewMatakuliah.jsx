@@ -54,7 +54,7 @@ const ViewMatakuliah = () => {
         fetchData();
     }, []);
     return (
-        <div className="flex flex-col items-center ">
+        <div className="flex flex-col items-center h-full overflow-auto custom-scrollbar">
             <div className="mt-4 bg-[#fff] shadow-lg rounded-lg h-screen px-4  max-w-7xl">
                 <h2 className="text-xl font-semibold text-gray-800 md:text-center mb-6">
                     Jadwal Mata Kuliah

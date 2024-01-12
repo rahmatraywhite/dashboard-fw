@@ -13,7 +13,7 @@ const AddMatakuliah = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-full overflow-auto custom-scrollbar">
       <MatkulFormInput onMataKuliahSubmit={handleMataKuliahSubmit} />
       <MatkulFormFile onFileUpload={handleFileUpload} />
     </div>
