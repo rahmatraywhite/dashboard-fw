@@ -5,10 +5,11 @@ import { db } from "../firebase";
 import FormFile from "../components/MatkulFormFile";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useAuth } from "../hooks/useAuth";
 
 const ViewMatakuliah = () => {
+    useAuth();
     const [mataKuliah, setMataKuliah] = useState([]);
-
     const handleDelete = async (mataKuliahId) => {
         try {
             const result = await Swal.fire({

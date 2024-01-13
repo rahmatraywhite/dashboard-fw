@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import MahasiswaFormInput from '../components/MahasiswaFormInput';
 import MahasiswaFormFile from '../components/MahasiswaFormFile';
+import { useAuth } from '../hooks/useAuth';
 
 const AddMahasiswa = () => {
+  useAuth();
   const [mahasiswa, setMahasiswa] = useState([]);
-
   const handleMahasiswaSubmit = (mahasiswaData) => {
     setMahasiswa([...mahasiswa, mahasiswaData]);
   };

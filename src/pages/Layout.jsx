@@ -11,13 +11,15 @@ import {
   EyeOutlined,
   PlusOutlined,
   LogoutOutlined,
-  ExclamationCircleOutlined
+  FormOutlined
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
+import { useAuth } from '../hooks/useAuth';
 const { Header, Sider, Content } = Layout;
 
 
-const Dashboard = () => {
+const Layouts = () => {
+  useAuth();
   const navigate = useNavigate();
 
   function handleMenuClick({ key }) {
@@ -101,7 +103,7 @@ const Dashboard = () => {
     ]),
     getItem('Logout', '10', <LogoutOutlined />, null, null, showLogoutConfirmation),
   ];
-  
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -110,6 +112,9 @@ const Dashboard = () => {
   return (
     <Layout style={{ height: '100vh' }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
+        <div className='text-[16px] font-bold bg-[#1B9AD7]  py-5 justify-between px-[30px] flex'>
+          <p className='text-white '><FormOutlined className='mr-2' />{collapsed ? '' : 'Project 1'}</p>
+        </div>
         <Menu
           mode="inline"
           color="#fff"
@@ -157,4 +162,5 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+
+export default Layouts;

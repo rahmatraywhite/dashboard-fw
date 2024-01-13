@@ -11,15 +11,17 @@ import AddJadwal from './pages/AddJadwal'
 import ViewJadwal from './pages/ViewJadwal'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
+import Layouts from './pages/Layout'
+import DashboardContent from './pages/Dashboard'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Dashboard />,
+    element: <Layouts />,
     children: [
       {
         index: true,
-        element: <h1>home</h1>,
+        element: <DashboardContent />,
       },
       {
         path: '/matakuliah/add',

@@ -3,10 +3,11 @@ import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useAuth } from "../hooks/useAuth";
 
 const ViewDosen = () => {
+    useAuth();
     const [mataKuliah, setMataKuliah] = useState([]);
-
     const handleDelete = async (mataKuliahId) => {
         try {
             const result = await Swal.fire({
@@ -51,7 +52,7 @@ const ViewDosen = () => {
     return (
         <div className="flex flex-col overflow-auto custom-scrollbar h-full">
             <div className="mt-4 bg-[#fff] shadow-lg rounded-lg h-screen px-4  max-w-7xl">
-            <h2 className="text-xl font-semibold text-gray-800 md:text-center mb-6">
+                <h2 className="text-xl font-semibold text-gray-800 md:text-center mb-6">
                     Data Dosen
                 </h2>
                 <table className="table-auto w-full">

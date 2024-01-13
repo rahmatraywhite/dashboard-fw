@@ -3,10 +3,11 @@ import { getDocs, collection, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { useAuth } from '../hooks/useAuth';
 
 const ViewJadwal = () => {
+  useAuth();
   const [jadwal, setJadwal] = useState([]);
-
   const handleDelete = async (jadwalId) => {
     try {
       const result = await Swal.fire({

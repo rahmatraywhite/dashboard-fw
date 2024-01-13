@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import JadwalFormInput from '../components/JadwalFormInput';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../firebase';
+import { useAuth } from '../hooks/useAuth';
 
 const AddJadwal = () => {
+  useAuth();
   const [listMatakuliah, setListMatakuliah] = useState([]);
   const [listDosen, setListDosen] = useState([]);
   const [jadwal, setJadwal] = useState([])
 
   const handleJadwalSubmit = (jadwalData) => {
-      setJadwal([...jadwal, jadwalData]);
+    setJadwal([...jadwal, jadwalData]);
   }
 
   useEffect(() => {
@@ -37,7 +39,7 @@ const AddJadwal = () => {
 
   return (
     <div className="flex flex-col overflow-auto custom-scrollbar h-full">
-      <JadwalFormInput listMatakuliah={listMatakuliah} listDosen={listDosen} onJadwalSubmit={handleJadwalSubmit}  />
+      <JadwalFormInput listMatakuliah={listMatakuliah} listDosen={listDosen} onJadwalSubmit={handleJadwalSubmit} />
     </div>
   );
 };

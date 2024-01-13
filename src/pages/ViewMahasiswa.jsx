@@ -3,10 +3,11 @@ import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../firebase";
 import { FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useAuth } from "../hooks/useAuth";
 
 const ViewMahasiswa = () => {
+  useAuth();
   const [mahasiswa, setMahasiswa] = useState([]);
-
   const handleDelete = async (mahasiswaId) => {
     try {
       const result = await Swal.fire({
@@ -51,7 +52,7 @@ const ViewMahasiswa = () => {
 
   return (
     <div className="flex flex-col h-full overflow-auto custom-scrollbar">
-    <div className="bg-[#fff] rounded-lg h-screen px-4 max-w-7xl">
+      <div className="bg-[#fff] rounded-lg h-screen px-4 max-w-7xl">
         <h2 className="text-xl font-semibold text-gray-800 md:text-center mb-6">
           Data Mahasiswa
         </h2>

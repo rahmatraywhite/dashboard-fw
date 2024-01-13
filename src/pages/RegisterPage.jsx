@@ -72,8 +72,9 @@ const RegisterPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form onSubmit={handleRegister} className="w-full max-w-md">
+    <div className="flex items-center justify-center h-screen bg-gray-200">
+      <form onSubmit={handleRegister} className="w-full max-w-md bg-white p-8 shadow-md rounded-md">
+        <h2 className="text-2xl font-bold mb-4 text-center text-blue-500">Signup</h2>
         <div className="mb-4">
           <label htmlFor="firstName" className="block text-gray-700 font-bold">
             First Name
@@ -81,7 +82,7 @@ const RegisterPage = () => {
           <input
             type="text"
             id="firstName"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Enter your first name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
@@ -94,7 +95,7 @@ const RegisterPage = () => {
           <input
             type="text"
             id="lastName"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Enter your last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
@@ -107,7 +108,7 @@ const RegisterPage = () => {
           <input
             type="email"
             id="email"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -120,7 +121,7 @@ const RegisterPage = () => {
           <input
             type="tel"
             id="phone"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Enter your phone number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
@@ -133,7 +134,7 @@ const RegisterPage = () => {
           <input
             type="password"
             id="password"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -149,7 +150,7 @@ const RegisterPage = () => {
           <input
             type="password"
             id="confirmPassword"
-            className="form-input mt-1 block w-full"
+            className="form-input mt-1 block w-full p-2 border border-gray-300 rounded"
             placeholder="Confirm your password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -160,7 +161,7 @@ const RegisterPage = () => {
             type="submit"
             className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
           >
-            Register
+            Signup
           </button>
         </div>
       </form>
