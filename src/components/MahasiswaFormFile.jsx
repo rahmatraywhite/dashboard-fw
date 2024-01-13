@@ -99,7 +99,7 @@ const MahasiswaFormFile = ({ onFileUpload }) => {
   };
 
   return (
-    <div className="my-4 p-4 border bg-[#fff] max-w-7xl shadow-sm rounded-md">
+    <div className="my-4 p-4 border bg-[#fff] shadow-sm rounded-md">
       <label htmlFor="csvFile" className="block text-lg text-center font-semibold text-gray-600 mb-2">
         Upload File Data Mahasiswa
       </label>

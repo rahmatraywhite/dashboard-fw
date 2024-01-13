@@ -67,10 +67,10 @@ const JadwalFormInput = ({ onJadwalSubmit, listMatakuliah, listDosen }) => {
         { value: '15.20 - 17.00', label: '15.20 - 17.00' },
         { value: '17.20 - 19.00', label: '17.20 - 19.00' },
     ];
-    
+
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white max-w-7xl p-3 md:p-6 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="bg-white p-3 md:p-6 rounded-lg shadow-md">
             <h2 className="text-xl mb-4 font-semibold text-[#fff] text-center bg-[#1B9AD7] py-2">Tambah Data Jadwal</h2>
             <div className="grid md:grid-cols-1 item gap-4">
                 <div className="flex flex-col">

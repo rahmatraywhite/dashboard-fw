@@ -3,6 +3,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase';
 import Swal from 'sweetalert2';
+import { Input } from 'antd';
 const MatkulFormInput = ({ onMataKuliahSubmit }) => {
     const [kodeKelas, setKodeKelas] = useState('');
     const [kodeMataKuliah, setKodeMataKuliah] = useState('');
@@ -59,7 +60,7 @@ const MatkulFormInput = ({ onMataKuliahSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white max-w-7xl p-3 md:p-6 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="bg-white p-3 md:p-6 rounded-lg shadow-md">
             <h2 className="text-lg mb-4 font-semibold text-[#fff] text-center rounded-md bg-[#1B9AD7] py-2">Tambah Mata Kuliah</h2>
             {errorMessage && (
                 <div className="text-red-600 mb-4">{errorMessage}</div>

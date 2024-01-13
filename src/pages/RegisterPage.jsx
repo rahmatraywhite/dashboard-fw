@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
 import { auth, db } from '../firebase';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,11 +12,9 @@ const RegisterPage = () => {
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
-
-    // Password validation
     if (password !== confirmPassword) {
       Swal.fire({
         title: 'Error!',
@@ -27,14 +26,11 @@ const RegisterPage = () => {
     }
 
     try {
-      // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
         password
       );
-
-      // Add user data to Firestore
       const user = userCredential.user;
       const userData = {
         firstName,
@@ -43,24 +39,20 @@ const RegisterPage = () => {
         phone,
       };
       await addDoc(collection(db, 'users'), userData);
-
-      // Clear form fields
       setFirstName('');
       setLastName('');
       setEmail('');
       setPhone('');
       setPassword('');
       setConfirmPassword('');
-
-      // Show success message
       await Swal.fire({
         title: 'Success!',
         text: 'Registration successful.',
         icon: 'success',
         confirmButtonText: 'OK'
       });
+      navigate('/login');
     } catch (error) {
-      // Handle registration errors
       await Swal.fire({
         title: 'Error!',
         text: 'Registration failed. Please try again later.',
